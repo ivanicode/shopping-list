@@ -9,8 +9,7 @@ export interface ItemsProps {
 }
 
 export function Items({list, modifyItem}:ItemsProps){
-
-
+    console.log(list)
     return (
         <>
             <ul>

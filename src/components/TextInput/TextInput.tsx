@@ -13,15 +13,27 @@ export function TextInput({addItem}:TextInputProps){
 
     return (
         <>
-            <TextField id="standard-basic" variant="standard" value={textInputValue} onChange={(event) => 
-                {
+            <TextField 
+                id="standard-basic"
+                
+                inputProps={{
+                    'aria-label': "enter shop list item"
+                }}
+                variant="standard" 
+                value={textInputValue} 
+                onChange={(event) => {
                     hadleChange(event.target.value)
                 }}
             />
-            <Button variant="text" onClick={() => {
-                hadleChange("")
-                addItem(textInputValue)
-                }}>Save</Button>
+            <Button 
+                variant="text" 
+                onClick={() => {
+                    hadleChange("")
+                    addItem(textInputValue)
+                }}
+                disabled={!textInputValue ? true : false}>
+                Save
+            </Button>
         </>
     )
 }
