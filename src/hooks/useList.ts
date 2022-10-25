@@ -7,7 +7,7 @@ export interface ListItem {
 export interface UseListResult {
     list: ListItem[];
     addItem: (arg: string) => void;
-    modifyItem: (checked: boolean, index: number) => void;
+    deleteItem: (checked: boolean, index: number) => void;
 }
 
 export function useListHook():UseListResult{
@@ -21,10 +21,10 @@ export function useListHook():UseListResult{
         setList(newList)
     }
 
-    function modifyItem(checked: boolean, index: number){
+    function deleteItem(checked: boolean, index: number){
         const newList = [...list]
         newList.splice(index, 1)
         setList(newList)
     }
-    return {list, addItem, modifyItem }
+    return {list, addItem, deleteItem }
 }

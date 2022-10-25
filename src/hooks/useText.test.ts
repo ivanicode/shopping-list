@@ -2,7 +2,7 @@ import { useTextHook } from "./useText";
 import { renderHook, act } from "@testing-library/react-hooks";
 
 describe("useTextHook", () => {
-  it("", () => {
+  it("should update textfield", () => {
     const { result } = renderHook(() => useTextHook());
     expect(result.current.modified).toBe(false)
     expect(result.current.currentText).toEqual("")
